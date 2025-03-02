@@ -37,4 +37,40 @@ h.	Access I/O device.
 
     Limitations in Resource Management
     The operating system cannot dynamically adjust memory or process allocation, which reduces system efficiency.
-#
+# 1.8	Some CPUs provider for more than two modes of operation. What are two possible uses of these multiple modes?
+    Enhanced security and protection and optimized performance and functionality
+# 1.9	Timers cloud be used to compute the current time. Provider a short description of how this could be a accomplished.
+    A timer is used to measure the current time by generating periodic interrupts that update the system time based on the clock signal. The OS reads the timer value and converts it to a standard time format. For accuracy, the system often uses a Real-Time Clock (RTC) that runs continuously even when the device is turned off.
+# 1.10	Give two reasons why caches are useful. What problem do they solve? What problems do they cause? If a cache can be made as large as the device for which it is caching (for instance, a cache as large as a disk), why not make it that large and eliminate the device?
+    Cache is useful for improving access speed and reducing memory/disk load
+    Issues Resolved:
+    Reducing Speed Bottlenecks
+    Minimizing Latency and Power Consumption
+
+    Issues Raised:
+    Data Consistency (Cache Coherency)
+    High Costs & Complexity
+
+    and the reason why the cache is not made as large as the device is that it is less efficient and too costly
+# 1.11	Distinguish between the client-server and peer-to-peer models of distributed systems.
+    Aspect	Client-server	Peer-to-peer
+    Structure	Serving requests from clients	All nodes are equal and can act as both clients and servers
+    Resource Management	Centralized management by the server, creating a single point of failure.	Management is distributed among all peers, reducing the burden on a single point.
+    Security and constraints	Security is easier to implement with centralized control.	Security is more difficult to implement because there is no centralized control.
+# 1.12	How do clustered system differ form multiprocessor system? What is required for two machines belonging to a cluster to cooperate to provide a highly available service?
+    Multiprocessor System:
+    •	It consists of multiple CPUs connected in a single computer
+    •	The CPU shares memory and other resources
+    •	The main goal is to improve computing performance
+    •	It tends to have a single operatingsystem that manages all processors
+    •	Communication between processors is very fast because of the shared memory
+    Clustered system:
+    •	It consist of several separate computers (nodes) that are connected through a network
+    •	Each node has it own memory and operating system 
+    •	The main goal is to provide high availability and fault tolerance
+    •	Communication between nodes is slower compared to multiprocessors
+    •	Able to balance workload
+
+    For Two Machines in a Cluster to Work Together for High Availability The two machines in a cluster require Cluster Software, Shared Storage, Load Balancing, Heartbeat, and Automatic Failover.
+# 1.13	Consider a computing cluster consting of two nodes running a database. Describe two ways in which the cluster software can manage access to the data on the disk. Discuss the benefits and disadvantages of each.
+    A database cluster with two nodes can manage data access by means of shared storage, where both directly access the same disk, or by replication storage, where each node has a copy of the data and changes are synchronized with each other. Shared storage is easier and faster in failover, but it is risky at one point of failure and is expensive. Replication is more fail-tolerant and performs better, but it is more complex and potentially latency-inducing.
